@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="IntegrationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Timesheet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Associate" Type="varchar" MaxLength="50" />
+          <Property Name="Month" Type="varchar" MaxLength="50" />
+          <Property Name="WeekDate" Type="varchar" MaxLength="50" />
+          <Property Name="Project" Type="varchar" MaxLength="50" />
+          <Property Name="Task" Type="varchar" MaxLength="50" />
+          <Property Name="TaskType" Type="varchar" MaxLength="50" />
+          <Property Name="Monday" Type="varchar" MaxLength="50" />
+          <Property Name="Tuesday" Type="varchar" MaxLength="50" />
+          <Property Name="Wednesday" Type="varchar" MaxLength="50" />
+          <Property Name="Thursday" Type="varchar" MaxLength="50" />
+          <Property Name="Friday" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="IntegrationModelStoreContainer">
+          <EntitySet Name="Timesheet" EntityType="Self.Timesheet" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IntegrationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Timesheet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Associate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WeekDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Project" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Task" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaskType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Monday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tuesday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Wednesday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Thursday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Friday" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="IntegrationEntitiesPerkins" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Timesheets" EntityType="Self.Timesheet" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IntegrationModelStoreContainer" CdmEntityContainer="IntegrationEntitiesPerkins">
+          <EntitySetMapping Name="Timesheets">
+            <EntityTypeMapping TypeName="IntegrationModel.Timesheet">
+              <MappingFragment StoreEntitySet="Timesheet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Associate" ColumnName="Associate" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="WeekDate" ColumnName="WeekDate" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="Monday" ColumnName="Monday" />
+                <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+                <ScalarProperty Name="Wednesday" ColumnName="Wednesday" />
+                <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+                <ScalarProperty Name="Friday" ColumnName="Friday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

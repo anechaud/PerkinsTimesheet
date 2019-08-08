@@ -1,0 +1,44 @@
+﻿
+.navbar-custom {
+  background-color: maroon !important;
+  color: white !important;
+}
+
+.sidenav {
+  height: 1000px;
+  width: 200px;
+  /*position: fixed;*/
+  float: left;
+  background-color: #FFE4C4;
+  overflow-x: hidden;
+}
+
+.sidenav a {
+  padding: 16px 8px 16px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/*@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}*/
